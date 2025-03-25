@@ -1,0 +1,27 @@
+{
+  "name": "medicert",
+  "version": "1.0.0",
+  "description": "A web app for managing and printing prescriptions, certificates, and reports in healthcare settings.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "host": "vite --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atamagnini/medicert.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atamagnini/medicert/issues"
+  },
+  "homepage": "https://github.com/atamagnini/medicert#readme",
+  "dependencies": {
+    "vite": "^6.2.3"
+  }
+}
