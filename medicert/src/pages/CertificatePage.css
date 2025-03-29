@@ -1,0 +1,142 @@
+/* CertificatePage.css */
+@font-face {
+    font-family: 'Garet';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.certificate-page {
+    font-family: 'Garet', Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #152039;
+}
+
+.certificate-page h1 {
+    margin: 0 0 20px 0;
+    font-weight: normal;
+    color: #152039;
+    font-size: 28px;
+}
+
+.certificate-page main {
+    display: flex;
+    gap: 20px;
+    color: #152039;
+}
+
+.certificate-page section {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-page h2 {
+    color: #152039;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.certificate-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.certificate-page form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.certificate-page label {
+    font-size: 14px;
+    color: #152039;
+}
+
+.certificate-page input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: 'Garet', Arial, sans-serif;
+}
+
+.certificate-page input:focus {
+    border-color: #152039;
+    outline: none;
+}
+
+.certificate-page button {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Garet', Arial, sans-serif;
+    margin-top: 5px;
+}
+
+.certificate-page button:hover {
+    background-color: #cc0000;
+}
+
+.certificate-page ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.certificate-page li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(21, 32, 57, 0.1);
+}
+
+.certificate-page li:last-child {
+    border-bottom: none;
+}
+
+.certificate-page .invite-sent {
+    background-color: #152039;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.certificate-page button[type="submit"] {
+    background-color: #152039;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    align-self: flex-start;
+    min-width: 120px;
+}
+
+.certificate-page button[type="submit"]:hover {
+    background-color: #cc0000;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .certificate-page main {
+        flex-direction: column;
+    }
+
+    .certificate-page section {
+        margin-bottom: 20px;
+    }
+}
