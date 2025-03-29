@@ -1,6 +1,7 @@
 // CertificatePage.js
 import React, { useState } from 'react';
 import './CertificatePage.css';
+import Navbar from "../components/Navbar";
 // Admin should manage accounts if admin logs in it can see all of the users
 
 
@@ -80,6 +81,7 @@ function CertificatePage() {
 
     return (
         <div className="certificate-page">
+            <Navbar />
             <div className="certificate-content">
                 <div className="header">
                     <h1>MEDICAL SERVICE</h1>
