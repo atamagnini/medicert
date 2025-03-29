@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginPage.css';
 
 // Import your logo and decorative elements
@@ -13,6 +13,15 @@ const LoginPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
 
+    // Check if user is already logged in
+    useEffect(() => {
+        const token = localStorage.getItem('authToken') || sessionStorage.getItem('authToken');
+        if (token) {
+            // Redirect to certificates page if already logged in
+            window.location.href = '/certificate';
+        }
+    }, []);
+
     // Function to handle login submission
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,12 +29,40 @@ const LoginPage = () => {
         setError('');
 
         try {
-            //AWS lambda call
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            console.log('Login attempted with:', { username, password, rememberMe });
+            const apiUrl = 'https://9vmefwtzl7.execute-api.us-east-1.amazonaws.com/login-user/login-user';
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password,
+                    rememberMe: rememberMe
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Login failed');
+            }
+
+            const data = await response.json();
+
+            // Store token in localStorage or sessionStorage based on rememberMe
+            if (rememberMe) {
+                localStorage.setItem('authToken', data.token);
+            } else {
+                sessionStorage.setItem('authToken', data.token);
+            }
+
+            // Redirect to dashboard or appropriate page
+            window.location.href = '/certificate';
 
         } catch (err) {
             setError(err.message || 'Failed to login. Please try again.');
+            console.error('Login error:', err);
         } finally {
             setIsLoading(false);
         }

@@ -1,142 +1,373 @@
 /* CertificatePage.css */
-@font-face {
-    font-family: 'Garet';
-    font-weight: normal;
-    font-style: normal;
-}
-
 .certificate-page {
-    font-family: 'Garet', Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    color: #333;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    color: #152039;
+    background-color: white;
 }
 
-.certificate-page h1 {
-    margin: 0 0 20px 0;
-    font-weight: normal;
-    color: #152039;
-    font-size: 28px;
+/* Header Styling */
+.header {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
 }
 
-.certificate-page main {
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Form Styling */
+.certificate-form {
+    padding: 15px;
+}
+
+.form-row {
     display: flex;
-    gap: 20px;
-    color: #152039;
-}
-
-.certificate-page section {
-    flex: 1;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.certificate-page h2 {
-    color: #152039;
-    margin-top: 0;
     margin-bottom: 15px;
-    font-weight: normal;
-    font-size: 22px;
+    align-items: center;
 }
 
-.certificate-page form {
+.date-time {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+label {
+    min-width: 140px;
+    font-size: 14px;
+}
+
+.second-label {
+    margin-left: 20px;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    flex: 1;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.input-with-dropdown {
+    display: flex;
+    flex: 1;
+}
+
+.dropdown-btn {
+    background: #eee;
+    border: 1px solid #ccc;
+    border-left: none;
+    cursor: pointer;
+    width: 30px;
+    padding: 0;
+}
+
+.icon-btn {
+    margin-left: 5px;
+    background: #eee;
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.calendar-btn {
+    background: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.calendar-icon {
+    width: 14px;
+    height: 14px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+    background-size: contain;
+}
+
+/* Checkbox Styling */
+.checkboxes {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox-group label {
+    min-width: auto;
+    font-size: 12px;
+}
+
+/* Dropdown Styling */
+.dropdown-container {
+    position: relative;
+    width: 120px;
+}
+
+.dropdown-field {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    z-index: 10;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.dropdown-option {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+}
+
+/* Medical Section */
+.med-section {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.complies-section {
+    flex: 1;
+    padding-right: 15px;
+}
+
+.complies-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.complies-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* Address Section */
+.address-section {
+    flex: 1;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.certificate-row, .doctor-row, .diagnosis-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.diagnosis-row {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.diagnosis-row textarea {
+    width: 100%;
+}
+
+/* Resolution Section */
+.resolution-section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.medical-department {
+    flex: 1;
+    border-right: 1px solid #ccc;
+    padding-right: 15px;
+}
+
+.department-header {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.resolution-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.date-range {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.date-input {
+    display: flex;
+    align-items: center;
+}
+
+.date-input input {
+    width: 100px;
+    margin: 0 5px;
+}
+
+.absence-section {
+    flex: 1;
+    padding-left: 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.certificate-page form div {
+.absence-row, .clinic-row, .clearance-row {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
-.certificate-page label {
-    font-size: 14px;
-    color: #152039;
+.date-time-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.certificate-page input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    font-family: 'Garet', Arial, sans-serif;
+.time-input {
+    width: 80px;
 }
 
-.certificate-page input:focus {
-    border-color: #152039;
-    outline: none;
+/* Observations Section */
+.observations-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
-.certificate-page button {
-    background-color: #FF0000;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-family: 'Garet', Arial, sans-serif;
-    margin-top: 5px;
+.observations-section textarea {
+    width: 100%;
+    height: 80px;
 }
 
-.certificate-page button:hover {
-    background-color: #cc0000;
-}
-
-.certificate-page ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 15px;
-}
-
-.certificate-page li {
+/* Signatures */
+.signatures {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(21, 32, 57, 0.1);
+    margin-bottom: 30px;
 }
 
-.certificate-page li:last-child {
-    border-bottom: none;
+.signature-box {
+    border-top: 1px dashed #ccc;
+    width: 45%;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 12px;
 }
 
-.certificate-page .invite-sent {
-    background-color: #152039;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 0.8em;
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
-.certificate-page button[type="submit"] {
-    background-color: #152039;
-    color: white;
+.action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     border: none;
-    padding: 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
     font-weight: bold;
-    align-self: flex-start;
-    min-width: 120px;
+    cursor: pointer;
 }
 
-.certificate-page button[type="submit"]:hover {
-    background-color: #cc0000;
+.approve {
+    background-color: #4caf50;
+    color: white;
 }
 
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-    .certificate-page main {
+.print {
+    background-color: #2196f3;
+    color: white;
+}
+
+.cancel {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Media query for responsive design */
+@media (max-width: 992px) {
+    .resolution-section, .checkboxes, .med-section {
         flex-direction: column;
     }
 
-    .certificate-page section {
-        margin-bottom: 20px;
+    .complies-section, .medical-department {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 15px;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .address-section, .absence-section {
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .form-row {
+        flex-wrap: wrap;
+    }
+
+    .second-label {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
     }
 }
