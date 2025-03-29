@@ -19,6 +19,7 @@ function PrescriptionPage() {
         setMedications(updateMedications);
     };
 
+
     return (
       <>
       <Navbar/>
@@ -39,11 +40,11 @@ function PrescriptionPage() {
             type="text"
             value={fullName.lastName}
             onChange={(e) => setFullName({ ...fullName, lastName: e.target.value })}
-            placeholder="Enter last name"
+            placeholder="Enter last name."
           />
         </div>
   
-        {/* SSN */}
+        {/* ssn */}
         <div>
           <label>SSN</label>
           <input
@@ -90,7 +91,7 @@ function PrescriptionPage() {
         <button type="button" onClick={handleAddMedication}>Add Medication</button>
   
         {/* bottom of form:
-        Textarea for Description */}
+        Textarea for Diagnosis */}
         <div>
           <label>Diagnosis</label>
           <textarea
