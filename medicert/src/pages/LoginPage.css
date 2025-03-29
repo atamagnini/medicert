@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+
+.login-left {
+    background-color: #f4f4f4;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+}
+
+.nav-links .active {
+    text-decoration: underline;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;  /* Prevent the icon from blocking the input click */
+}
+
+input {
+    position: relative;  /* Keeps input above the icon in terms of layers */
+    z-index: 1;          /* Ensures input is clickable above the icon */
+    width: 100%;
+    padding: 10px 10px 10px 35px;  /* Adds padding to make space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #001358;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.login-right {
+    width: 50%;
+    background-color: #001358;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.illustration {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.keyhole {
+    width: 80px;
+    height: 100px;
+    background-color: #ffc300;
+    border-radius: 40px 40px 10px 10px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+}
+
+.top-right {
+    border-width: 0 40px 40px 0;
+    border-color: transparent #ffc300 transparent transparent;
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    border-width: 40px 0 0 40px;
+    border-color: transparent transparent transparent #ffc300;
+    bottom: 0;
+    left: 0;
+}
+
+.decorative-elements img {
+    position: absolute;
+    opacity: 0.1;
+}
+
+.triangle-1 {
+    top: 10%;
+    left: 20%;
+}
+
+.triangle-2 {
+    top: 40%;
+    left: 5%;
+}
+
+.triangle-3 {
+    bottom: 10%;
+    left: 30%;
+}
