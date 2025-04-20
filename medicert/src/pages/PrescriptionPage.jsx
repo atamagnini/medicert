@@ -1,6 +1,5 @@
 import { useState } from "react";
 import MedicationFormInput from "../components/MedcationFormInput";
-import Navbar from "../components/Navbar";
 import './CertificatePage.css';
 
 
@@ -24,9 +23,8 @@ function PrescriptionPage() {
 
     return (
       <div className="certificate-page">
-        <Navbar />
         <div className="header">
-          <h1>Prescription Certificate</h1>
+          <h1>MEDICAL PRESCRIPTION</h1>
         </div>
         <form className="certificate-form">
           {/* Name Fields */}

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,6 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import './App.css';
+import Navbar from './components/Navbar';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import PrescriptionPage from './pages/PrescriptionPage';
@@ -15,6 +15,9 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <div className="app-container">
+        <Navbar />
+        <div className="page-content">
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<LoginPage />} />
@@ -22,6 +25,8 @@ function App() {
           <Route path="/prescription" element={<PrescriptionPage />} />
           <Route path="/certificate" element={<CertificatePage />} />
         </Routes>
+        </div>
+      </div>
       </Router>
     </div>
   );

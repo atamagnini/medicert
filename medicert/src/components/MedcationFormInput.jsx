@@ -1,5 +1,4 @@
 
-
 const MedicationFormInput = ({ medication, setMedication }) => {
     const medicatonOptions = ["Med 1", "Med 2", "Med 3"];
     const formOptions = ["pill", "liquid", "injection"];
