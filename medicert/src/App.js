@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
   Navigate,
+  useLocation
 } from "react-router-dom";
 import './App.css';
 import Navbar from './components/Navbar';
@@ -11,25 +12,32 @@ import DashboardPage from './pages/DashboardPage';
 import PrescriptionPage from './pages/PrescriptionPage';
 import CertificatePage from './pages/CertificatePage';
 
-function App() {
+const AppContent = () => {
+  const hideNavbar = useLocation().pathname === "/login";
+
   return (
-    <div className="App">
-      <Router>
       <div className="app-container">
-        <Navbar />
+        {!hideNavbar && <Navbar />}
         <div className="page-content">
-        <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/prescription" element={<PrescriptionPage />} />
-          <Route path="/certificate" element={<CertificatePage />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/prescription" element={<PrescriptionPage />} />
+            <Route path="/certificate" element={<CertificatePage />} />
+          </Routes>
         </div>
       </div>
-      </Router>
-    </div>
   );
 }
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
 
 export default App;
