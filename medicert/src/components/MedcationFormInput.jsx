@@ -1,26 +1,27 @@
 
 const MedicationFormInput = ({ medication, setMedication }) => {
-    const medicatonOptions = ["Med 1", "Med 2", "Med 3"];
-    const formOptions = ["pill", "liquid", "injection"];
-  
-    return (
+  const medicatonOptions = ["Med 1", "Med 2", "Med 3"];
+  const formOptions = ["pill", "liquid", "injection"];
+
+  return (
+    <div>
+      {/* Medication */}
       <div>
-        {/* Medication */}
-        <div>
-          <label>Medication</label>
-          <select
-            value={medication.name || ""}
-            onChange={(e) => setMedication({ ...medication, name: e.target.value })}
-          >
-            <option value="">-- Select --</option>
-            {medicatonOptions.map((option, index) => (
-              <option key={index} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-  
+        <label>Medication</label>
+        <select
+          value={medication.name || ""}
+          onChange={(e) => setMedication({ ...medication, name: e.target.value })}
+        >
+          <option value="">-- Select --</option>
+          {medicatonOptions.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className='form-row'>
         {/* Dosage */}
         <div>
           <label>Dosage</label>
@@ -31,7 +32,7 @@ const MedicationFormInput = ({ medication, setMedication }) => {
             placeholder="Enter Dosage"
           />
         </div>
-  
+
         {/* Frequency */}
         <div>
           <label>Frequency</label>
@@ -42,7 +43,7 @@ const MedicationFormInput = ({ medication, setMedication }) => {
             placeholder="Enter Frequency"
           />
         </div>
-  
+
         {/* Form */}
         <div>
           <label>Form</label>
@@ -58,7 +59,7 @@ const MedicationFormInput = ({ medication, setMedication }) => {
             ))}
           </select>
         </div>
-  
+
         {/* Duration */}
         <div>
           <label>Duration</label>
@@ -70,7 +71,8 @@ const MedicationFormInput = ({ medication, setMedication }) => {
           />
         </div>
       </div>
-    );
-  };
-  
+    </div>
+  );
+};
+
 export default MedicationFormInput;
