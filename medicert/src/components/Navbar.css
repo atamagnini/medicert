@@ -2,19 +2,25 @@
 
 .navbar {
     height: 100vh;
-    width: 200px;
+    width: 150px;
     background-color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .nav-button {
     background-color: #34495e;
     color: white;
-    padding: 12px 15px;
+    padding: 15px;
+    width: 100%;
     margin-bottom: 10px;
     text-align: center;
     font-size: 14px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.2s ease;
   }
   
   .nav-button:hover {
