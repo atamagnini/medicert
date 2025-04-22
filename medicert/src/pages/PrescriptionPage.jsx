@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MedicationFormInput from "../components/MedcationFormInput";
-import './CertificatePage.css';
+import './PrescriptionPage.css';
 
 
 function PrescriptionPage() {
@@ -38,13 +38,13 @@ function PrescriptionPage() {
   };
 
   return (
-    <div className="certificate-page">
+    <div className="prescription-page">
       <div className="header">
         <h1>MEDICAL PRESCRIPTION</h1>
       </div>
-      <form onSubmit={handleSubmit} className="certificate-form">
-        {/* Name Fields */}
+      <form onSubmit={handleSubmit} className="prescription-form">
         <div className="form-row">
+          {/* Name Fields */}
           <label>First Name</label>
           <input
             type="text"
@@ -52,8 +52,9 @@ function PrescriptionPage() {
             onChange={(e) => setFullName({ ...fullName, firstName: e.target.value })}
             placeholder="Enter first name"
           />
-        </div>
-        <div className="form-row">
+
+          <div className="spacer"></div>
+
           <label>Last Name</label>
           <input
             type="text"
@@ -63,8 +64,9 @@ function PrescriptionPage() {
           />
         </div>
 
-        {/* SSN */}
         <div className="form-row">
+          {/* SSN */}
+
           <label>SSN</label>
           <input
             type="text"
@@ -72,10 +74,9 @@ function PrescriptionPage() {
             onChange={(e) => setSsn(e.target.value)}
             placeholder="Enter SSN"
           />
-        </div>
 
-        {/* Insurance */}
-        <div className="form-row">
+          <div className="spacer"></div>
+          {/* Insurance */}
           <label>Insurance</label>
           <input
             type="text"
@@ -84,7 +85,6 @@ function PrescriptionPage() {
             placeholder="Enter insurance"
           />
         </div>
-
         {/* Medications */}
         {medications.map((medication, index) => (
           <div key={index} className="form-row">
