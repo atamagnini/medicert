@@ -21,7 +21,7 @@ function PrescriptionPage() {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
       fullName,
@@ -33,7 +33,25 @@ function PrescriptionPage() {
     };
 
     console.log('Prescription data:', formData);
-    // Future Lambda function call will go here
+    
+    try {
+      const response = await fetch("https://medicertdb.crc48ss6s75k.us-east-1.rds.amazonaws.com/endpoint", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) throw new Error("Something went wrong");
+  
+      const data = await response.json();
+      console.log("Success:", data);
+      // Optionally reset form or show success message
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+
     alert('Form submitted!');
   };
 
