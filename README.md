@@ -6,7 +6,7 @@ To use this app first install react
 
 Download and install Node.js from the official website. npm is included with Node.js. 
 
-Then cd medicert/src
+Then `cd medicert/src`
 
 Run `npm install react-router-dom`
 
