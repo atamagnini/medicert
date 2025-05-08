@@ -8,4 +8,5 @@ Download and install Node.js from the official website. npm is included with Nod
 
 Then cd medicert/src
 
-Run npm start
+Run `npm install react-router-dom`
+Run `npm start`
